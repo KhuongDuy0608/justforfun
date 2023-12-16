@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <mete name="viewport" content="width=device_width, initial-scale=1">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <mete name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Merry Christmas</title>
-        <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
-        <style>
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <style type="text/css">
+            @import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
             body{
                 background-image: url(images/1859235.jpg);
                 background-size: cover;
-                color:Yellow;
                 text-align: center;
             }
-            h1 {
+            .text{
                 font-size: 45px;
-                font-family: 'Rubik Bubbles', cursive;
-                padding-top: 180px;
+                font-family: 'Rubik Bubbles',cursive;
+                padding-top: 120px;
+                animation: color 5s infinite;
             }
-            h2{
-                font-size: 30px;
-                font-family: 'Rubik Bubbles', cursive;
+            @keyframes color{
+                0%{color:yellow}
+                10%{color:purple}
+                20%{color:brown}
+                30%{color:red}
+                40%{color:green}
+                50%{color:darkred}
+                60%{color:darkturquoise}
+                70%{color:lawngreen}
+                80%{color:salmon}
+                90%{color:darkgoldenrod}
+                100%{color:blueviolet}
             }
         </style>
     </head>
     <body>
-        <h1><b>MERRY CHRISTMAS</b></h1>
-        <p><h2>Wish you all the best and happiness!!!</h2></p>
+        <p class="text">MERRY CHRISTMAS <br>
+            Wish you all the best and happiness!!!
+        </p>
         <script src="snowstorm.js"> 
         </script>
         <script>
             snowStorm.snowColor = '#ffffff';
-            snowStorm.flakesMaxActive = 140;
+            snowStorm.flakesMaxActive = 300;
             snowStorm.snowCharacter = '❄';
         </script>
         <audio controls autoplay loop>
