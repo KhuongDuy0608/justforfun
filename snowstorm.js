@@ -1,16 +1,3 @@
-/** @license
- * DHTML Snowstorm! JavaScript-based snow for web pages
- * Making it snow on the internets since 2003. You're welcome.
- * -----------------------------------------------------------
- * Version 1.44.20131215 (Previous rev: 1.44.20131208)
- * Copyright (c) 2007, Scott Schiller. All rights reserved.
- * Code provided under the BSD License
- * http://schillmania.com/projects/snowstorm/license.txt
- */
-
-/*jslint nomen: true, plusplus: true, sloppy: true, vars: true, white: true */
-/*global window, document, navigator, clearInterval, setInterval */
-
 var snowStorm = (function(window, document) {
 
     // --- common properties ---
@@ -44,12 +31,11 @@ var snowStorm = (function(window, document) {
     this.vMaxX = 5;                 // Maximum X velocity range for snow
     this.vMaxY = 4;                 // Maximum Y velocity range for snow
     this.zIndex = 0;                // CSS stacking order applied to each snowflake
-  
-    // --- "No user-serviceable parts inside" past this point, yadda yadda ---
+
   
     var storm = this,
     features,
-    // UA sniffing and backCompat rendering mode checks for fixed position, etc.
+
     isIE = navigator.userAgent.match(/msie/i),
     isIE6 = navigator.userAgent.match(/msie 6/i),
     isMobile = navigator.userAgent.match(/mobile|opera m(ob|in)/i),
@@ -75,12 +61,7 @@ var snowStorm = (function(window, document) {
     features = (function() {
   
       var getAnimationFrame;
-  
-      /**
-       * hat tip: paul irish
-       * http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-       * https://gist.github.com/838785
-       */
+
   
       function timeoutShim(callback) {
         window.setTimeout(callback, 1000/(storm.animationInterval || 20));
@@ -93,7 +74,7 @@ var snowStorm = (function(window, document) {
           window.msRequestAnimationFrame ||
           timeoutShim);
   
-      // apply to window, avoid "illegal invocation" errors in Chrome
+
       getAnimationFrame = _animationFrame ? function() {
         return _animationFrame.apply(window, arguments);
       } : null;
